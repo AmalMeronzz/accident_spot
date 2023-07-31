@@ -1,0 +1,39 @@
+{% extends 'station/index.html'%}
+{% block content %}
+
+<div class="card" style="margin-left:100px; min-height:550px;" >
+                  <div class="card-body">
+                    <center><br><br>
+
+                    </center><br><br>
+                      <div class="table-responsive">
+                          <center> <h2 class="card-title">View Fuel Station</h2></center><br>
+                      <table class="table">
+
+                        <thead>
+                          <tr>
+                              <th><h5>No.</h5></th>
+                              <th><h5>ADDRESS</h5></th>
+                              <th><h5>LATITUDE</h5></th>
+                              <th><h5>LONGITUDE</h5></th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                              <td><h5>{{ forloop.counter }}</h5></td>
+                              <td><h5>{{i.2}}</h5></td>
+                              <td><h5>{{i.3}}</h5></td>
+                              <td><h5>{{i.4}}</h5></td>
+                              <td><a href="../stationviewlocation/{{i.3}}/{{i.4}}"><h5>Map</h5></a></td>
+                              <td><a href="../editfuelstation/{{i.0}}"><h5>Edit</h5></a></td>
+                              <td><a href="../deletefuelstation/{{i.0}}"><h5>Delete</h5></a></td>
+                          </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+
+{% endblock %}

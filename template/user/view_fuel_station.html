@@ -1,0 +1,33 @@
+{% extends 'user/index.html' %}
+{% block content%}
+
+<div class="card" style="margin-left:100px; min-height:500px;" >
+                  <div class="card-body">
+                    <center><br><br>
+
+                    </center><br><br>
+                      <div class="table-responsive">
+                          <h2 class="card-title">VIEW FUEL STATION</h2><br>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                              <th><h4>No.</h4></th>
+                              <th><h4>ADDRESS</h4></th>
+                              <th><h4>VIEW FUEL STATION</h4></th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                              <td><h5>{{ forloop.counter }}</h5></td>
+                              <td><h5>{{i.2}}</h5></td>
+                              <td><a href="../uviewlocation/{{i.3}}/{{i.4}}"><input type="submit" value="view on map"></a></td>
+                              </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+
+{% endblock %}

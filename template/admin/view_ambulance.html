@@ -1,0 +1,40 @@
+{% extends 'admin/index.html' %}
+{% block content %}
+
+<div class="card" >
+                  <div class="card-body">
+                    <center>
+                      <h2 class="card-title">VIEW STATION AND FUEL STATION</h2>
+                    </center><br><br>
+                      <div class="table-responsive">
+                       <table class="table">
+                        <thead>
+                          <tr>
+                              <th><h4>No.</h4></th>
+                              <th><h4>DRIVER NAME</h4></th>                                                               </h4></th>
+                              <th><h4>ADDRESS</h4></th>
+                              <th><h4>EMAIL</h4></th>
+                              <th><h4>PHONE</h4></th>
+                              <th><h4>PASSWORD</h4></th>
+                          </tr>
+                        </thead>
+                        {% for i in data %}
+                        <tbody>
+                          <tr>
+                              <td><h5>{{ forloop.counter }}</h5></td>
+                              <td><h5>{{i.1}}</h5></td>
+                              <td><h5>{{i.2}}</h5></td>
+                              <td><h5>{{i.3}}</h5></td>
+                              <td><h5>{{i.4}}</h5></td>
+                              <td><h5>{{i.5}}</h5></td>
+<!--                              <td><a href="../editfinecategory/{{i.0}}"><div class="badge badge-outline-warning">edit</div></a></td>-->
+                              <td><a href="../deleteambulance/{{i.0}}"><div class="badge badge-outline-danger">delete</div></a></td>
+
+                              </tr>
+                        </tbody>
+                        {% endfor %}
+                      </table>
+                    </div>
+                  </div>
+</div>
+{% endblock %}

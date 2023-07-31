@@ -1,0 +1,68 @@
+{% extends 'login_home.html' %}
+{% block content %}
+<br><br>
+<html lang="en">
+<style>
+ input[type=submit]{
+ font-size: 13px;
+  border-radius: 20px;
+  padding: 12px 20px;
+  background-color: #00b4c6;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.25px;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+input[type=submit]:hover {
+  background-color: #0088e8;
+}
+</style>
+<body>
+<div align="center"  class="contact-form">
+<form id="form1" name="form1" method="post" action="/userregister"  >
+  {% csrf_token %}
+  <center><h2 style="color:white;">USER REGISTRATION</h2></center><br>
+  <table align="center" width="400" border="0" >
+
+    <tr>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+      <th style="color:white">NAME</th>
+      <td><label for="name"></label>
+      <input type="text" name="name" id="name" align="center" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th style="color:white">PHONE</th>
+      <td><label for="phone"></label>
+      <input type="number" name="phone" id="phone" align="center" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th style="color:white">EMAIL</th>
+      <td><label for="email"></label>
+      <input type="text" name="email" id="email" align="center" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th style="color:white">ADDRESS</th>
+      <td><label for="address"></label>
+      <input type="text" name="address" id="address" align="center" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th style="color:white">Password</th>
+      <td><label for="passwd"></label>
+      <input type="password" name="password" id="passwd" align="center" class="form-control" required/></td>
+    </tr>
+    <tr>
+      <th></th>
+      <td><input  name="login" type="submit" id="login" value="Register"  class="main-button-slider "/></td>
+    </tr>
+  </table>
+</form>
+</div>
+</body>
+</html>
+
+{% endblock %}
